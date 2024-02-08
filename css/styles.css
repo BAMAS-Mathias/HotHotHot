@@ -117,3 +117,39 @@ h1{
     background-color: rgba(215,87,59,0.85);
     border-radius: 0 10px 30px 0;
 }
+
+@media screen and (max-width: 1100px) {
+    #all-temp-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    #all-temp-container{
+        width: 100%;
+        align-items: center;
+    }
+
+    .temp-container{
+        width: 95vw;
+    }
+
+    .main-temp-container{
+        width: 100%;
+    }
+
+    h1{
+        font-size: 50px;
+    }
+
+    .min-max-container p {
+        font-size: 20px;
+    }
+
+    .temp-value{
+        font-size: 60px;
+    }
+
+
+}

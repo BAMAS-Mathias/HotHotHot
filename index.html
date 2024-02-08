@@ -7,16 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HotHotHot</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script defer type="module" src="js/script.js"></script>
 </head>
 <body>
     <main>
+        <nav>
+            <button class="tab" id="main-menu" aria-controls="all-temp-container">RETOUR</button>
+        </nav>
         <h1>HotHotHot</h1>
-        <section id="all-temp-container">
+        <section id="all-temp-container" class="tab-panel">
             <div class="temp-container" id="temp-interieur-container">
                 <div class="main-temp-container">
                     <h2>INTERIEUR</h2>
                     <p id="interior-temp-value" class="temp-value">18.7°C</p>
-                    <button class="history-button">HISTORIQUE</button>
+                    <button id="interior-history-btn" aria-controls="interior-panel" role="tab" aria-selected="false" class="history-button tab">HISTORIQUE</button>
                 </div>
                 <div class="min-max-container">
                     <div id="temp-interieur-min" class="min-container">
@@ -31,7 +35,7 @@
                 <div class="main-temp-container">
                     <h2>EXTERIEUR</h2>
                     <p id="exterior-temp-value" class="temp-value">18.6°C</p>
-                    <button class="history-button">HISTORIQUE</button>
+                    <button id="exterior-history-btn" role="tab" aria-controls="exterior-panel" aria-selected="false" class="history-button tab" >HISTORIQUE</button>
                 </div>
                 <div class="min-max-container">
                     <div id="temp-exterieur-min" class="min-container">
@@ -43,6 +47,8 @@
                 </div>
             </div>
         </section>
+        <section id="interior-panel" class="tab-pabel"></section>
+        <section id="exterior-panel" class="tab-pabel"></section>
     </main>
 </body>
 </html>
