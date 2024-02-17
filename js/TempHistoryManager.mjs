@@ -1,18 +1,35 @@
 class TempHistoryManager{
 
-    constructor(historyContainerElemId) {
-        this._historyContainerElemId = historyContainerElemId;
+    constructor(historyCanvaId) {
+        this._historyContainerElemId = historyCanvaId;
+        this.chart = new Chart(document.getElementById(historyCanvaId), {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Temperature',
+                    data: [],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        })
     }
 
-    update(tempValue){
-        this.addValue(tempValue);
+    update(temp){
+        this.addValue(temp);
     }
 
-    addValue(value){
-        let historyContainerElem = document.querySelector("#" + this._historyContainerElemId);
-        let valueElem = document.createElement("p");
-        valueElem.innerText = value;
-        historyContainerElem.appendChild(valueElem);
+    addValue(temp){
+        this.chart.data.labels.push(temp.date)
+        this.chart.data.datasets[0].data.push(temp.value);
+        this.chart.update();
     }
 }
 

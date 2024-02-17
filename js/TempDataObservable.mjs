@@ -12,8 +12,8 @@ class TempDataObservable{
         this.observers.removeItem(ob)
     }
 
-    notify(tempValue){
-        this.observers.forEach(ob => ob.update(tempValue))
+    notify(temp){
+        this.observers.forEach(ob => ob.update(temp))
     }
 }
 

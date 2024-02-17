@@ -1,12 +1,12 @@
 class DataOutManager {
 
-    update(tempValue){
-        this.changeTemp(tempValue);
+    update(temp){
+        this.changeTemp(temp);
     }
 
-    changeTemp(tempValue){
+    changeTemp(temp){
         let inValueTempElem = document.querySelector("#exterior-temp-value")
-        inValueTempElem.innerText = tempValue + "°C";
+        inValueTempElem.innerText = temp.value + "°C";
     }
 }
 

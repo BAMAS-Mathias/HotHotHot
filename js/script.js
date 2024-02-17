@@ -12,8 +12,8 @@ let dataInManager = new DataInManager();
 let tempDataObservableIn = new TempDataObservable();
 let tempDataObservableOut = new TempDataObservable();
 let tempDataAccess = new TempDataAccess();
-let tempInHistory = new TempHistoryManager("interior-panel")
-let tempOutHistory = new TempHistoryManager("exterior-panel")
+let tempInHistory = new TempHistoryManager("interior-canva")
+let tempOutHistory = new TempHistoryManager("exterior-canva")
 let inUrl = "https://hothothot.dog/api/capteurs/interieur";
 let outUrl = "https://hothothot.dog/api/capteurs/exterieur";
 
