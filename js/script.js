@@ -3,6 +3,7 @@ import {DataOutManager} from "./DataOutManager.mjs";
 import {DataInManager} from "./DataInManager.mjs";
 import {TempDataObservable} from "./TempDataObservable.mjs";
 import {TempDataAccess} from "./TempDataAccess.mjs";
+import {TempHistoryManager} from "./TempHistoryManager.mjs";
 
 let tabList = document.querySelectorAll(".tab")
 let ongletManager = new OngletManager();
@@ -11,11 +12,15 @@ let dataInManager = new DataInManager();
 let tempDataObservableIn = new TempDataObservable();
 let tempDataObservableOut = new TempDataObservable();
 let tempDataAccess = new TempDataAccess();
+let tempInHistory = new TempHistoryManager("interior-panel")
+let tempOutHistory = new TempHistoryManager("exterior-panel")
 let inUrl = "https://hothothot.dog/api/capteurs/interieur";
 let outUrl = "https://hothothot.dog/api/capteurs/exterieur";
 
 tempDataObservableIn.subscribe(dataInManager);
 tempDataObservableOut.subscribe(dataOutManager);
+tempDataObservableIn.subscribe(tempInHistory);
+tempDataObservableOut.subscribe(tempOutHistory);
 updateTempData();
 
 setInterval(() => {
